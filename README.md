@@ -1,16 +1,40 @@
-# plant-disease-cnn-transfer-learning
-Kod do artykułu: Studium przypadku zastosowania architektur ResNet50 i VGG16 do klasyfikacji chorób roślin z wykorzystaniem transfer learningu i metod XAI.
+# Plant Disease Classification ResNet50 vs VGG16 (Grad-CAM)
 
-W repozytorium znajdują się dwa pliki:
-01_train_fold.ipynb — trenowanie jednego podziału CV, należy uruchomić 5 razy, zmieniając FOLD_IDX od 0 do 4
-02_aggregate_gradcam.ipynb — agregacja wyników, test Wilcoxona, macierze pomyłek, Grad-CAM
+Kod źródłowy do studium porównawczego klasyfikacji chorób liści
+piętnastu klas zbioru PlantVillage z wykorzystaniem ResNet50 i VGG16,
+z analizą interpretowalności decyzji metodą Grad-CAM.
 
-Jak uruchomić:
+## Dane
+PlantVillage subset (15 klas):
+https://www.kaggle.com/datasets/emmarex/plantdisease
 
-Uruchomić notebook w Google Colab z GPU
-Wkleić swój KAGGLE_USERNAME i KAGGLE_KEY w komórce konfiguracyjnej
-Uruchomić Runtime → Run all
+## Uruchomienie
 
-Po uruchomieniu uczenia dataset pobiera się automatycznie, aby odtworzyć pełne uczenie należy wykonać train_fold_colab.ipynb pięciokrotnie, następnie dane, które zostały zapisane na Google Drive zostaną wczytane przez drugi plik aggregate_colab.ipynb, który należy wykorzystać po całościowym uczeniu obu modeli.
+Wszystkie notebooki przeznaczone do Google Colab z GPU (testowano na NVIDIA Tesla T4, 16 GB VRAM).
 
-Licencja: Unlicense
+1. Podmontuj Google Drive z folderem `plant_disease_classification/`.
+2. Wpisz token Kaggle w komórce KAGGLE (pobranie zbioru danych).
+3. Uruchom `train_5fold_cv.ipynb` pięciokrotnie, zmieniając `FOLD_IDX` na 0, 1, 2, 3, 4 przed każdą sesją.
+4. Uruchom `train_5x2cv.ipynb` pięciokrotnie, zmieniając `REP_IDX` na 0, 1, 2, 3, 4 przed każdą sesją.
+5. Uruchom `aggregate.ipynb` — generuje wszystkie statystyki i rysunki.
+
+## Uwagi praktyczne
+
+- Limit sesji Google Colab nie pozwala odpalić wszystkich podziałów za jednym razem,
+  dlatego w `train_5fold_cv.ipynb` i `train_5x2cv.ipynb` przewidziano ręczne przełączanie
+  parametrów `FOLD_IDX` / `REP_IDX` między sesjami.
+- Pełne odtworzenie eksperymentu zajmuje ~25-30 godzin GPU sumarycznie
+  (5-fold CV: ~10h, 5×2cv: ~15-20h).
+- Wagi modeli i pliki `metrics.json` zapisywane są na podmontowanym Google Drive
+  i można je usuwać między sesjami, jeśli brakuje miejsca.
+
+## Ziarna losowości
+
+| Protokół | Seedy |
+|---|---|
+| 5-fold CV | 42 (jeden, dla `StratifiedKFold`) |
+| 5×2cv | 42, 1042, 2042, 3042, 4042 (po jednym na powtórzenie) |
+
+## Licencja
+
+Unlicense (public domain).
