@@ -1,0 +1,26 @@
+{
+  "test_accuracy": {
+    "mean_diff_pp": 0.9012675285339355,
+    "ci_lo_pp": 0.5911314487457275,
+    "ci_hi_pp": 1.2114036083221436,
+    "excludes_zero": true
+  },
+  "balanced_accuracy": {
+    "mean_diff_pp": 0.9281871727204405,
+    "ci_lo_pp": 0.5143868084569259,
+    "ci_hi_pp": 1.3419875369839551,
+    "excludes_zero": true
+  },
+  "f1_macro": {
+    "mean_diff_pp": 1.0538818452637289,
+    "ci_lo_pp": 0.7321015926475762,
+    "ci_hi_pp": 1.413692151534267,
+    "excludes_zero": true
+  },
+  "f1_weighted": {
+    "mean_diff_pp": 0.8944754626725193,
+    "ci_lo_pp": 0.5854096121076813,
+    "ci_hi_pp": 1.2035413132373574,
+    "excludes_zero": true
+  }
+}
