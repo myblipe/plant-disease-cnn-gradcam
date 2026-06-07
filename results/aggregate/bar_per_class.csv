@@ -1,0 +1,16 @@
+class,bar_resnet_mean,bar_resnet_std,bar_vgg_mean,bar_vgg_std,n
+Pepper__bell___Bacterial_spot,0.257,0.093,0.267,0.096,997
+Pepper__bell___healthy,0.271,0.127,0.299,0.136,1478
+Potato___Early_blight,0.218,0.126,0.208,0.13,1000
+Potato___Late_blight,0.235,0.094,0.112,0.097,1000
+Potato___healthy,0.173,0.071,0.205,0.086,152
+Tomato_Bacterial_spot,0.357,0.103,0.301,0.128,2127
+Tomato_Early_blight,0.376,0.141,0.38,0.147,1000
+Tomato_Late_blight,0.405,0.153,0.355,0.14,1909
+Tomato_Leaf_Mold,0.406,0.166,0.318,0.167,952
+Tomato_Septoria_leaf_spot,0.405,0.126,0.432,0.131,1771
+Tomato_Spider_mites_Two_spotted_spider_mite,0.463,0.105,0.307,0.127,1676
+Tomato__Target_Spot,0.428,0.12,0.318,0.147,1404
+Tomato__Tomato_YellowLeaf__Curl_Virus,0.304,0.1,0.171,0.072,3208
+Tomato__Tomato_mosaic_virus,0.547,0.102,0.61,0.082,373
+Tomato_healthy,0.562,0.11,0.574,0.119,1591

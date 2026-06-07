@@ -1,0 +1,26 @@
+{
+  "test_accuracy": {
+    "F": 1.9082120702619465,
+    "p_value": 0.24650516024714575,
+    "mean_diff_pp": 1.379019021987915,
+    "direction": "VGG16 > ResNet50"
+  },
+  "balanced_accuracy": {
+    "F": 2.11982495868405,
+    "p_value": 0.21055417362240547,
+    "mean_diff_pp": 1.524519359491816,
+    "direction": "VGG16 > ResNet50"
+  },
+  "f1_macro": {
+    "F": 1.6172798808750122,
+    "p_value": 0.3105428255796483,
+    "mean_diff_pp": 1.464494199846833,
+    "direction": "VGG16 > ResNet50"
+  },
+  "f1_weighted": {
+    "F": 1.901469814785439,
+    "p_value": 0.2477810225047713,
+    "mean_diff_pp": 1.3823471327094383,
+    "direction": "VGG16 > ResNet50"
+  }
+}
